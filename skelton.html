@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Maker</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-light">
+
+    <div class="element-wrapper d-flex align-items-stretch">
+
+        <nav class="container" id="sidebar">
+            <div class="p-4">
+                <h1>XCare</h1>
+                <ul class="list-unstyled components mb-5">
+                    <li>
+                        <div class="form-group draggable">
+                            <label for="exampleInputText">Text Box</label>
+                            <input type="text" class="form-control" id="exampleInputText" aria-describedby="text"
+                                placeholder="Text Box">
+                            <small id="textHelp" class="form-text text-muted">custopm text under the Element.</small>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group draggable">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form-group draggable">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="cotainer shadow-sm p-3 mb-5 bg-white rounded">
+                <h3>Create Custom Layout</h3>
+                <hr>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Add Row to Layout</label>
+                            <button class="btn btn-primary w-100" onclick="addRowElements()">Add Row +</button>
+                        </div>  
+                    </div>
+                    <div id="coloumnFeild" class="col-md-6 d-none">
+                        <div class="form-group">
+                            <label for="">Please Provide The Number of Coloumns</label>
+                            <input type="text" class="form-control" id="coloumnValues" aria-describedby="text" placeholder="Number of Coloumns">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 text-center">
+                    <div id="layoutAdd" class="col d-none">
+                        <button class="btn btn-success w-75" id="generaterFormLayout"> Generate Form Layout </button>
+                        <hr>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="container mb-4 mt-5">              
+                <div class="container shadow-sm p-3 mb-5 bg-white rounded" id="samplePlay">
+                    <h2 class="mb-4 mt-1 text-center">Your Sample Form Layout is Here</h2>
+                    <div id="sampleZone">
+                        <div class="row p-3" id="rowId1">
+                            <div class="col-md-4 droppable" style="height: 100px; border: 1px  solid;"></div>
+                            <div class="col-md-4 droppable" style="height: 100px; border: 1px  solid;"></div>
+                            <div class="col-md-4 droppable" style="height: 100px; border: 1px  solid;"></div>
+                        </div>
+                    </div>
+                    <button class="btn btn-info" id="removeStyles">Remove Border</button>
+                </div>
+
+                <div class="row text-center mt-2 d-none" id="layoutTitle">
+                    <div class="col">
+                        <h2 class="p-1">Dynamic Grid Layout</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="grid shadow-sm p-3 mb-5 bg-white rounded d-none" id="generateZone">
+                        
+                </div>
+            </div>
+        </div>        
+
+    </div>
+
+    
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="hqy.interact.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+    
+    <script>
+        
+    </script>
+
+</body>
+</html>

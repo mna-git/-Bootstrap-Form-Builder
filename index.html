@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/custom_side_bar.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+    
+</head>
+<body class="bg-light">
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-light shadow-sm" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light">
+                <h2 class="text-dark font-weight-bold text-uppercase">X-Care Form Maker</h2>
+                <small class="form-text text-muted">bootstrap form builder</small>
+            </div>
+
+            <button class="btn btn-info w-100 mt-2 mb-3 d-none" id="addRowButton" style="font-size: 17px;" data-toggle="modal" data-target="#addRowModal">Add Row <i class="fas fa-plus-circle"></i></button>
+            <hr>
+            <div class="pl-4 pr-4 pt-2 pb-2">
+                <h4>Grouped Elements</h4>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Input Feilds
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton"> 
+                        <div class="form-group" draggable="true" id="src_copy" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="formGroupExampleInput">Text Feild</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput"
+                                placeholder="Example input placeholder">
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy2" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleFormControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com">
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy3" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy4" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleFormControlTextarea1">Text area</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        
+                </div>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Radio & Check box Feilds
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton">
+                        <div class="form-group" draggable="true" id="src_copy5" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleFormControlInput1">Example Checkbox</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">2</label>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy6" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleFormControlInput1">Example Radio</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Select Feild
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton">
+                        <div class="form-group" draggable="true" id="src_copy7" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="exampleFormControlSelect1">Example select</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>        
+                        </div>
+                </div>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Buttons
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton">
+                        <div class="form-group" draggable="true" id="src_copy8" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-primary w-100 draggable">Primary</button>         
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy9" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-secondary w-100 draggable">Secondary</button>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy10" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-success w-100 draggable">Success</button>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy11" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-warning w-100 draggable">Warning</button>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy12" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-danger w-100 draggable">Danger</button>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy13" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <button class="btn btn-info w-100 draggable">Info</button>
+                        </div>
+                </div>
+            </div>
+            <hr>
+            <div class="pl-4 pr-4 pt-2 pb-2">
+                <h4>Single Elements</h4>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Label and Check Feilds
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton">
+                        <div class="label" draggable="true" id="src_copy14" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <label for="">Example Label</label>       
+                        </div>
+                        <hr>
+                        <div class="checkbox" draggable="true" id="src_copy15" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                <label class="form-check-label" for="defaultCheck1">
+                                  Default checkbox
+                                </label>
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="radio" draggable="true" id="src_copy16" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                  Default radio
+                                </label>
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="checkbox" draggable="true" id="src_copy17" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+                              </div>
+                        </div>
+                        <hr>
+                        <div class="radio" draggable="true" id="src_copy18" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <div class="form-check">
+                                <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                              </div>
+                        </div>
+                </div>
+            </div>
+            <div class="dropdown border">
+                <button class="bg-light dropdown-toggle w-100 border-0"
+                    style="text-align: left; padding: .75rem 1.25rem;" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Single Input Feilds
+                </button>
+                <div class="dropdown-menu bg-light w-100 shadow p-2" aria-labelledby="dropdownMenuButton">
+                        <div class="form-group" draggable="true" id="src_copy19" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">       
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy20" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy21" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy22" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <hr>
+                        <div class="form-group" draggable="true" id="src_copy23" ondragstart="dragstart_handler(event);" ondragend="dragend_handler(event);">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <button class="btn btn-info border border-left-0" id="menu-toggle"><i class="fas fa-bars" style="font-size: 18px;"></i></button>
+
+            <div class="container-fluid mt-1">
+                <div class="shadow-sm p-3 mb-2 bg-white rounded" id="createCustomGrid">
+                    <div class="row p-3 text-center">
+                        <div class="col">
+                            <h3 class="text-dark font-weight-bold text-uppercase">Create Custom Grid</h3>
+                            <hr class="bg-info">
+                        </div>
+                    </div>
+                    <div id="addRowAndColumn">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Number of Rows</label>
+                                    <input type="text" class="form-control" id="rowValuesGrid" aria-describedby="text"
+                                        placeholder="Number of Rows">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Number Of Columns</label>
+                                    <input type="text" class="form-control" id="coloumnValuesGrid" aria-describedby="text"
+                                        placeholder="Number of Coloumns">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2 text-center">
+                            <div class="col">
+                                <button class="btn btn-info w-75" id="createGrid" style="font-size: 18px;">Create Grid <i class="fas fa-border-all"></i></button>
+                            </div>
+                        </div>
+                        <div class="row mt-2 text-center">
+                            <div class="col">
+                                <!-- <button class="d-none" id="resetGrid" style="font-size: 18px;">Reset Grid <i class="fas fa-undo"></i></button> -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="cellsActive">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                      Create with Cells
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div class="modal fade" id="addRowModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Create a Row</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">Please Provide The Number of Coloumns</label>
+                            <input type="text" class="form-control" id="coloumnValues" aria-describedby="text"
+                                placeholder="Number of Coloumns">
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button class="btn btn-info w-75" id="createRow"> Create Row</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <!-- <div class="container shadow-sm p-3 mb-5 bg-white rounded" id="samplePlay">
+                    <h3 class="mb-4 mt-1 text-center text-dark text-uppercase">Your Sample Form Layout is Here</h3>
+                    <div id="sampleZone">
+                        <div class="row p-1 pl-3 pr-3" id="customRowId1">
+                            <div class="col-md-4 droppable" style="height: 80px; border: 1px  solid;">
+                                <button class="btn btn-danger edit">Edit</btn>                       
+                            </div>
+                            <div class="col-md-4 droppable" style="height: 80px; border: 1px  solid;">
+                            </div>
+                            <div class="col-md-4 droppable"  id="col3" style="height: 80px; border: 1px  solid;">
+                            </div>
+                        </div>
+                        <div id="hardCodedDiv"></div>
+                        <div class="row p-1 pl-3 pr-3" id="customRowId3">
+                            <div class="col-md-12 p-0">
+                                <div class='row m-0 p-0'>
+                                    <div class="col-12 droppable" style='height: 40px; border: 1px  solid;' hqy-droppable-element='active'></div>
+                                </div>
+                                <div class='row m-0 p-0'>
+                                    <div class="col-12 droppable" style='height: 40px; border: 1px  solid;' hqy-droppable-element='active'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-info mt-3" id="removeStyles">Remove Border</button>
+                </div> -->
+
+                <div class="row p-3 text-center mt-2 d-none" id="layoutTitle">
+                    <div class="col shadow-sm p-3 bg-white rounded">
+                        <h3 class="p-1 text-dark text-uppercase font-weight-bold">Dynamic Grid Layout</h3>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-info mt-1 btn-small w-100" id="removeGridBorder">Remove Borders & Buttons &nbsp; <i class="far fa-trash-alt"></i></button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-info mt-1 btn-small w-100" id="createNewGrid">Create New Grid &nbsp; <i class="fas fa-file-medical"></i></button>
+                            </div>
+                        </div>
+                        <div class="row p-3" style="font-size: 20px;">
+                            <div class="col-6 text-right">
+                                <i class='fas fa-minus-circle colBtn' id='colRemoveButton' cursor='pointer' style='cursor: pointer;'></i>
+                                <small class="text-muted">Remove Column</small>
+                            </div>
+                            <div class="col-6 text-left">
+                                <i class='fas fa-minus-circle colElementBtn' id='colRemoveButton' cursor='pointer' style='cursor: pointer;'></i>
+                                <small class="text-muted">Remove Item in a Column</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid shadow-sm p-3 mb-5 bg-white rounded d-none" id="generateZone"></div>
+                <div class="row mt-4 d-none" id="htmlButton">
+                    <div class="col-12"><button class="btn btn-info mt-1 w-100" style="font-size: 18px;" id="generateHtml">Generate HTML &nbsp; <i class="fas fa-file-download"></i></button></div>
+                </div>
+                <br>
+                <div class="container mt-2 d-none" id="htmlZone"></div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+    </div>
+
+        <script src="assets/js/jquery-3.5.1.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/drag_and_drop_API.js"></script>
+        <script>
+            $("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+</body>
+</html>
